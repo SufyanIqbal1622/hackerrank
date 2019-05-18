@@ -1,0 +1,24 @@
+
+    // Complete the compareTriplets function below.
+    static List<int> compareTriplets(List<int> a, List<int> b)
+    {
+        int aliceTotalScore = 0, bobTotalScore = 0;
+
+        for (int i = 0; i < 3; i++)
+        {
+            int aliceScore = a[i];
+            int bobScore = b[i];
+            if (aliceScore != bobScore)
+            {
+                int temp = aliceScore > bobScore ? aliceTotalScore++ : bobTotalScore++;
+            }
+
+        }
+        List<int> result = new List<int>();
+        
+        result.Add(aliceTotalScore);
+        result.Add(bobTotalScore);
+        return result;
+
+
+    }
