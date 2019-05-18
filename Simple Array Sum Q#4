@@ -1,0 +1,9 @@
+ static int simpleArraySum(int n, int[] ar) {
+    // Complete this function
+    // so the solution is here
+    int sum = 0;
+    foreach( var item in ar){
+        sum += item;
+    }
+    return sum;
+}
