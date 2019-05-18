@@ -1,0 +1,33 @@
+// Replace my this code with hackerrank code and see 100% working
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
+    static void Main(String[] args) {
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[][] a = new int[n][];
+        for(int a_i = 0; a_i < n; a_i++){
+            string[] a_temp = Console.ReadLine().Split(' ');
+            a[a_i] = Array.ConvertAll(a_temp,Int32.Parse);
+        }
+        int value = -1;
+
+        IEnumerable<int> leftDiagonal=  a.Select((x) => x.ElementAt(value +1));
+        int total1 = 0, total2=0;
+        foreach (var b in leftDiagonal)
+        {
+            total1 += b;
+            value++;
+        }
+
+        int value2 = a.Length;
+        IEnumerable<int> ans2 = a.Select((x) => x.ElementAt(value2 - 1));
+        foreach (var b1 in ans2)
+        {
+            total2 += b1;
+            value2--;
+        }
+        Console.WriteLine(Math.Abs(total1 - total2));
+    }
+}
